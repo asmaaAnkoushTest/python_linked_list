@@ -25,3 +25,10 @@ def test_append_and_length():
     ll.append(30)
 
     assert ll.length == 3
+
+def test_insert_invalid_index():
+    ll = LinkedList()
+
+    with pytest.raises(IndexError):
+        ll.insert(5, 100)
+        ll.insert(0, 5)
