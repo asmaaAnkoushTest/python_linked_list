@@ -53,4 +53,11 @@ def test_clear():
 
     assert ll.length == 0
     assert ll.head is None
-    
+
+def test_contains():
+    ll = LinkedList()
+    ll.add("a")
+    ll.add("b")
+
+    assert ll.contains("a") is True
+    assert ll.contains("z") is False
