@@ -32,3 +32,15 @@ def test_insert_invalid_index():
     with pytest.raises(IndexError):
         ll.insert(5, 100)
         ll.insert(0, 5)
+        assert ll.length == 1
+
+def test_remove_at():
+    ll = LinkedList()
+    ll.add(1)
+    ll.add(2)
+    ll.add(3)
+
+    removed = ll.remove_at(1)
+
+    assert removed == 2
+    assert ll.length == 2
