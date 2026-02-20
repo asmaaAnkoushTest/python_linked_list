@@ -44,3 +44,13 @@ def test_remove_at():
 
     assert removed == 2
     assert ll.length == 2
+
+def test_clear():
+    ll = LinkedList()
+    ll.add(1)
+    ll.add(2)
+    ll.clear()
+
+    assert ll.length == 0
+    assert ll.head is None
+    
