@@ -35,13 +35,33 @@ class LinkedList:
         while current:
             print(f"{current.value} -> ", end = "")
             current = current.next
+    
+    def insert(self, index, value):
+        node: Node = Node(value)
+        if self.length < index or index < 0:
+            raise IndexError("Index Out Of Range")
+        elif index == 0:
+            node.next = self.head
+            self.head = node
+            self.length += 1
+        else:
+            current: Node = self.head
+            i: int = 0 
+            while i < index - 1:
+                current = current.next
+                i += 1
+            node.next = current.next
+            current.next = node
+            self.length += 1
+
 
 
     
 # ll = LinkedList()
 # ll.append(10)
 # ll.append(5)
-# ll.add(20)
+# ll.insert(2, 15)
+# ll.insert(2,20)
 
 # print(ll.length)
 # ll.print_list()
