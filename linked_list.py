@@ -74,21 +74,7 @@ class LinkedList:
             current.next = current.next.next
             self.length -= 1
             return removed
-
-
-
     
-# ll = LinkedList()
-# ll.append(10)
-# ll.append(5)
-# ll.insert(2, 15)
-# ll.insert(2,20)
-
-# print(ll.length)
-# ll.print_list()
-
-# removed = ll.remove_at(3)
-# print (f"the Removed Element is : {removed}")
-
-# print(f"\n{ll.length}")
-# ll.print_list()
+    def clear(self):
+        self.head = None
+        self.length = 0
