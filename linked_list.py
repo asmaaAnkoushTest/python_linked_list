@@ -78,3 +78,14 @@ class LinkedList:
     def clear(self):
         self.head = None
         self.length = 0
+
+    def contains(self,value) -> bool:
+        current: Node = self.head
+        if self.length == 0:
+            return False
+        else:
+            while current:
+                if current.value == value:
+                    return True
+                current = current.next
+            return False
