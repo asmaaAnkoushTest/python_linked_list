@@ -4,7 +4,6 @@ class Node:
         self.value = value
         self.next = None
 
-
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -15,12 +14,22 @@ class LinkedList:
         node: Node = Node(value)
         if self.head is None:
             self.head = node 
-        else :
+        else:
             current: Node = self.head
             while current.next:
                 current = current.next
             current.next = node
         self.length += 1
+
+    def append(self, value):
+        node: Node = Node(value)
+        if self.head is None:
+            self.head = node
+        else:
+            node.next = self.head.next
+            self.head.next = node
+        self.length += 1
+
 
 
     def print_list(self):
@@ -32,8 +41,8 @@ class LinkedList:
 
     
 # print("##HIII##")
-# ll = LinkedList()
-# ll.add(10)
+ll = LinkedList()
+ll.append(10)
 
-# print(ll.length)
-# ll.print_list()
+print(ll.length)
+ll.print_list()
