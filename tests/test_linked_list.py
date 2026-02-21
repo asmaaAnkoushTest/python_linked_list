@@ -81,3 +81,19 @@ def test_for_each():
     assert ll.contains(1) is False
     assert ll.contains(2) is True
 
+def test_map():
+    ll = LinkedList()
+    ll.add(1)
+    ll.add(2)
+    ll.add(3)
+
+    new_list = ll.map(lambda x: x * 2)
+
+    assert new_list.index_of(2) is 0
+    assert new_list.index_of(4) is 1
+    assert new_list.index_of(6) is 2
+
+    # assert new_list[0] == 2
+    # assert new_list[1] == 4
+    # assert new_list[2] == 6
+
