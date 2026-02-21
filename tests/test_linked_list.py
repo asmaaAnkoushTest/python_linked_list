@@ -97,3 +97,15 @@ def test_map():
     # assert new_list[1] == 4
     # assert new_list[2] == 6
 
+def test_where():
+    ll = LinkedList()
+    ll.add(1)
+    ll.add(2)
+    ll.add(3)
+    ll.add(4)
+
+    evens = ll.where(lambda x: x % 2 == 0)
+
+    assert evens.length == 2
+    assert evens.index_of(2) == 0
+    assert evens.index_of(4) == 1
