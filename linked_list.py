@@ -117,3 +117,14 @@ class LinkedList:
             new_list.add(new_value)
             current = current.next
         return new_list
+
+    def where (self, action) -> LinkedList:
+        current: Node = self.head
+        new_list: LinkedList = LinkedList()
+        while current:
+            if (action)(current.value) is True:
+                new_list.add(current.value)
+            else:
+                pass
+            current = current.next
+        return new_list
