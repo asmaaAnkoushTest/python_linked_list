@@ -102,4 +102,21 @@ class LinkedList:
                 index += 1
                 current = current.next
             return -1
+        
+    def for_each(self, action):
+        current: Node = self.head
+        while current:
+            current.value = (action)(current.value)
+            current = current.next
+    
+ll = LinkedList()
+ll.add(1)
+ll.add(2)
+ll.add(3)
+ll.print_list()
+ll.for_each(lambda x: x * 2)
+print ("\n")
+ll.print_list()
+
+
 
