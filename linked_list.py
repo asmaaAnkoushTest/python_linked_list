@@ -108,4 +108,12 @@ class LinkedList:
         while current:
             current.value = (action)(current.value)
             current = current.next
-            
+    
+    def map(self, action) -> LinkedList:
+        current: Node = self.head
+        new_list: LinkedList = LinkedList()
+        while current:
+            new_value = (action)(current.value)
+            new_list.add(new_value)
+            current = current.next
+        return new_list
