@@ -35,6 +35,7 @@ class LinkedList:
         while current:
             print(f"{current.value} -> ", end = "")
             current = current.next
+        print("None")
     
     def insert(self, index, value):
         node: Node = Node(value)
@@ -128,3 +129,12 @@ class LinkedList:
                 pass
             current = current.next
         return new_list
+    
+    def __str__(self):
+        current: Node = self.head
+        string: str = ""
+        while current:
+            string = string + f"{current.value} -> "
+            current = current.next
+        string = string + "None"
+        return string
